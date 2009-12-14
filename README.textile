@@ -1,0 +1,69 @@
+h1. fuFade 1.0 - jQuery plugin
+
+
+h2. Info
+
+fuFade is a slideshow plugin with next/prev buttons and via css allows you to provide a more semantically pleasing slideshow (see example.htm)
+I've optimized this code and also cleaned it up as far as possible to a point where it almost passes the lint test (jslint.com).
+
+Developed by "Chris McKee":mailto:pcdevils@gmail.com, "http://chrismckee.co.uk":http://chrismckee.co.uk
+For updates, follow Chris McKee on "Twitter":http://twitter.com/chrismckee
+
+h2. Examples
+
+Included in archive.
+
+h2. Markup
+
+<pre>
+As in the Example File.
+</pre>
+
+
+h2. CSS
+
+<pre>
+In the Example file.
+</pre>
+
+h2. Initialize
+
+<pre>
+<script type="text/javascript">
+// As in the example 
+	   $(function(){
+			$('ul#slideshow').fuFade({
+				speed: 2000,
+				timeout: 4000,
+				containerheight: '334px'
+			});
+		});
+    
+// Minimal
+	   $(function(){
+			$('ul#slideshow').fuFade();
+		});
+</script>
+</pre>
+
+h2. Options
+
+<pre>
+ 	  speed: Fading Speed in milliseconds or keywords (slow, normal or fast) (Default: 'normal'), 
+ 	  timeout: Time between the fades in milliseconds (Default: '2 seconds [2000 ms]'), 
+ 	  type: Type of slideshow: 'sequence', 'random' (Default: 'sequence'), 
+ 		containerheight: Height of the containing element in any css-height-value (Default: 'auto'),
+ 	  runningclass: CSS-Class which the container get's applied (Default: 'fufade'),
+ 	  children: optional children selector (Default: null)
+</pre>
+
+h2. Changelog
+
+* First Release 1.0
+
+h3. Based on...
+<pre>
+innerfade by Torsten Baldes [http://bit.ly/8MiZzr] 
+which was based on the work of Matt Oakes [http://bit.ly/moaks] 
+& Ralf S. Engelschall [http://bit.ly/chootrain]
+</pre>

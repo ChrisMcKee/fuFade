@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>FuFade + JQuery</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.fufade.min.js"></script>
+<!-- <script type="text/javascript" src="js/jquery.fufade.js"></script> -->
+<meta http-equiv="imagetoolbar" content="no" />
+<script type="text/javascript">
+/* YSlow guidelines say you should really load your JS at the bottom; this is at the top for reading purposes */
+	   $(function(){
+			$('ul#slideshow').fuFade({
+				speed: 2000,
+				timeout: 4000,
+				containerheight: '334px'
+			});
+		});
+</script>
+<style type="text/css">
+<!--
+* {
+	margin:0px;
+	padding:0px;
+}
+ul#slideshow img { border:0; }
+ul#slideshow{
+	display:block;
+	width:712px;
+	height:334px;
+	background-color:#333;
+}
+ul#slideshow li {
+	font-family:Arial, Helvetica, sans-serif;
+	width:712px;
+	height:334px;
+	display:block;
+	position:relative;
+}
+ul#slideshow li h3 {
+	position:absolute;
+	bottom:14px;
+	left:8px;
+	color:#fff;
+	font-size:1.2em;
+	font-weight:100;
+}
+ul#slideshow li h4 a {
+	display:block;
+	background:url(testimages/search_btn.gif) no-repeat center center;
+	width:180px;
+	height:36px;
+	position:absolute;
+	right:8px;
+	bottom: 5px;
+}
+.backbtn span, .nextbtn span, ul#slideshow li h4 a span {
+	position:absolute;
+	left:-10000px;
+}
+.nextbtn, .backbtn {
+	display:block;
+	height:17px;
+	width:17px;
+	background:url(testimages/next.gif) no-repeat center center;
+	position:absolute;
+	top:12px;
+	left:31px;
+}
+.backbtn {
+	background-image:url(testimages/prev.gif);
+	left:11px;
+}
+
+.dnone{ display:none; } /* Here to stop the page load flash */
+-->
+</style>
+</head>
+<body>
+<div class="limiter">
+  <h1>fuFade</h1>
+  <ul id="slideshow">
+    <li> <a href="#1"><img src="testimages/img1.jpg" width="712" height="334" /></a>
+      <h3>Image 1</h3>
+      <h4><a href="#1"><span>Image 1 Description</span></a></h4>
+      <a href="#prev" class="backbtn"><span>prev</span></a> <a href="#next" class="nextbtn"><span>next</span></a>
+		</li>
+    <li class="dnone"> <a href="#2"><img src="testimages/img2.jpg" width="713" height="334" /></a>
+      <h3>Image 2</h3>
+      <h4><a href="#2"><span>Image 1 Description</span></a></h4>
+      <a href="#prev" class="backbtn"><span>prev</span></a> <a href="#next" class="nextbtn"><span>next</span></a> 
+    </li>
+    <li class="dnone"> <a href="#3"><img src="testimages/img3.jpg" width="712" height="334" /></a>
+      <h3>Image 3</h3>
+      <h4><a href="#3"><span>Image 3 Description</span></a></h4>
+      <a href="#prev" class="backbtn"><span>prev</span></a> <a href="#next" class="nextbtn"><span>next</span></a>
+		</li>
+    <li class="dnone"> <a href="#4"><img src="testimages/img4.jpg" width="712" height="334" /></a>
+      <h3>Image 4</h3>
+      <h4><a href="#4"><span>Image 4 Description</span></a></h4>
+      <a href="#prev" class="backbtn"><span>prev</span></a> <a href="#next" class="nextbtn"><span>next</span></a>
+		</li>
+    <li class="dnone"> <a href="#5"><img src="testimages/img5.jpg" width="712" height="334" /></a>
+      <h3>Image 5</h3>
+      <h4><a href="#5"><span>Image 5 Description</span></a></h4>
+      <a href="#prev" class="backbtn"><span>prev</span></a> <a href="#next" class="nextbtn"><span>next</span></a>
+		</li>
+  </ul>
+</div>
+<br />
+<script type="text/javascript">
+<!--
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-865639-2']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackEvent', 'jqfuFadePlugin', 1]);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+  })();
+-->
+</script>
+</body>
+</html>
