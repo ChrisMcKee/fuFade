@@ -1,6 +1,6 @@
 /* =========================================================
 // jquery.fufade.js 1.0
-// Chris McKee <pcdevils@gmail.com> 2008-9
+// Chris McKee <pcdevils@gmail.com> 2008-10
 // chrismckee.co.uk // http://bit.ly/chrisisagit
 // re-coded & optimized for size + functionality
 // Based on innerfade - see git for details
@@ -15,7 +15,6 @@
  * | children        | definer   | null                 |
  * |____________________________________________________|
  */
-
 (function ($) {
     var settings, elements, i, current, last, prev, next, fuTimer;
     
