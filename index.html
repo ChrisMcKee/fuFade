@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <title>FuFade + JQuery</title>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.fufade.min.js"></script>
 <!-- <script type="text/javascript" src="js/jquery.fufade.js"></script> -->
 <meta http-equiv="imagetoolbar" content="no" />
@@ -18,16 +18,22 @@
 </script>
 <style type="text/css">
 <!--
+/* SLIDESHOW STYLES */
+
 * {
 	margin:0px;
 	padding:0px;
 }
+
 ul#slideshow img { border:0; }
 ul#slideshow{
 	display:block;
 	width:712px;
 	height:334px;
-	background-color:#333;
+	-webkit-box-shadow: #333 0px 0px 10px;
+	-moz-box-shadow: #333 0px 0px 10px;
+	-o-box-shadow: #333 0px 0px 10px;
+	box-shadow: #333 0px 0px 10px;
 }
 ul#slideshow li {
 	font-family:Arial, Helvetica, sans-serif;
@@ -72,11 +78,26 @@ ul#slideshow li h4 a {
 }
 
 .dnone{ display:none; } /* Here to stop the page load flash */
+/* END OF SLIDESHOW STYLES */
+body{ background: #474747 url(demojunk/bg.png) repeat; }
+#wrapper{ width: 720px; text-align:center; margin:8px auto; }
+@font-face {
+	font-family: 'Museo500';
+	src: url('demojunk/museo/Museo500-Regular.eot');
+	src: local('☺'), url('demojunk/museo/Museo500-Regular.woff') format('woff'), url('demojunk/museo/Museo500-Regular.ttf') format('truetype');
+}
+h1{ font:4em 'Museo500', arial;
+margin:15px 0;
+color: #222;
+text-shadow: 0px 2px 3px #555;
+}
+small a{ text-align:center; margin:10px auto; color:#fff; text-decoration:none; font-family:arial; }
+
 -->
 </style>
 </head>
 <body>
-<div class="limiter">
+<div id="wrapper">
   <h1>fuFade</h1>
   <ul id="slideshow">
     <li> <a href="#1"><img src="testimages/img1.jpg" width="712" height="334" /></a>
@@ -105,8 +126,10 @@ ul#slideshow li h4 a {
       <a href="#prev" class="backbtn"><span>prev</span></a> <a href="#next" class="nextbtn"><span>next</span></a>
 		</li>
   </ul>
-</div>
+<!-- END OF SLIDESHOW -->
 <br />
+<small><a href="http://chrismckee.co.uk/">&copy; Chris McKee &lt;chrismckee.co.uk&gt;</a></small>
+</div>
 <script type="text/javascript">
 <!--
   var _gaq = _gaq || [];
