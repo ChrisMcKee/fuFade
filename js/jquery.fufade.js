@@ -1,6 +1,6 @@
 /* =========================================================
-// jquery.fufade.js 1.0
-// Chris McKee <pcdevils@gmail.com> 2008-9
+// jquery.fufade.js 1.1
+// Chris McKee <pcdevils@gmail.com> 2008-10
 // chrismckee.co.uk // http://bit.ly/chrisisagit
 // re-coded & optimized for size + functionality
 // Based on innerfade - see git for details
@@ -17,7 +17,7 @@
  */
 
 (function ($) {
-  var settings, elements, i, current, last, prev, next, fuTimer;
+  var settings, elements, i, current, last, prev, next, fuTimer, nextbtn, backbtn;
 
   //Main
   $.fn.fuFade = function (options) {
@@ -43,19 +43,21 @@
     elements = (settings.children === null) ? $(container).children() : elements = $(container).children(settings.children);
 
     if (elements.length > 1) {
-      $(container).css('position', 'relative').css('height', settings.containerheight).addClass(settings.runningclass);
+		
+	  nextbtn = $(".nextbtn"); backbtn = $(".backbtn");
+	  $(container).css({'position': 'relative', 'height': settings.containerheight}).addClass(settings.runningclass);
 
       for (i = 0; i < elements.length; i++) {
-        $(elements[i]).css('z-index', String(elements.length - i)).css('position', 'absolute').hide();
+		$(elements[i]).css({'z-index': String(elements.length - i), 'position': 'absolute'}).hide();
       }
 
-      $(".nextbtn").bind('click', function () {
+      nextbtn.bind('click', function () {
         fuTimer = setTimeout(function () {
           $.fuFade.next(elements, settings, 1, 0, fuTimer);
         }, 0);
       });
       //wake up back button
-      $(".backbtn").fadeTo("fast", 0.5);
+      backbtn.fadeTo("fast", 0.5);
 
       if (settings.type === "sequence") {
         setTimeout(function () {
@@ -94,9 +96,7 @@
 
     for (i = 0; i < elements.length; i++) {
       if ((i !== last) && (i !== current)) {
-        $(elements[i]).css('z-index', '1');
-        $(elements[i]).css('top', 0).css('left', 0);
-        $(elements[i]).fadeOut(settings.speed);
+        $(elements[i]).css({ "left": 0, "top":0, "z-index": '1' }).fadeOut(settings.speed);
       }
     }
     $(elements[last]).css('z-index', '190');
@@ -105,15 +105,15 @@
 
     //Button Binding
     //Next
-    $(".nextbtn").unbind('click');
-    $(".nextbtn").bind('click', function () {
+    nextbtn.unbind('click');
+    nextbtn.bind('click', function () {
       clearTimeout(fuTimer);
       $.fuFade.next(elements, settings, next, current, fuTimer);
       return false;
     });
     //Back
-    $(".backbtn").unbind('click');
-    $(".backbtn").bind('click', function () {
+    backbtn.unbind('click');
+    backbtn.bind('click', function () {
       clearTimeout(fuTimer);
       $.fuFade.next(elements, settings, prev, current, fuTimer);
       return false;
@@ -124,9 +124,9 @@
     $(elements[current]).fadeIn(settings.speed, function () {
       $.fuFade.removeFilter($(this)[0]);
     });
-    $(".backbtn").fadeTo("fast", 1);
+    backbtn.fadeTo("fast", 1);
 
-    //Images in Sequence		
+    //Images in Sequence
     if (settings.type === "sequence") {
       if ((current + 1) < elements.length) {
         current = current + 1;

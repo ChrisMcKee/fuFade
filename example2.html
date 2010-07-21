@@ -34,14 +34,20 @@
 <!--
 /* SLIDESHOW STYLES */
 
-* {
-	margin:0px;
-	padding:0px;
-	outline:none;
+* {	margin:0px;	padding:0px;outline:none;}
+
+html {
+filter: expression(document.execCommand("BackgroundImageCache", false, true));
 }
+
+.transparentbg {
+  background:transparent url(testimages/transparentpixel.png) repeat; 
+}
+.transparentbg div{	background-color:#000;}
 
 ul#slideshow img { border:0; }
 ul#slideshow{
+	font-family:arial;
 	display:block;
 	width:712px;
 	height:334px;
@@ -51,30 +57,24 @@ ul#slideshow{
 	box-shadow: #000 0px 0px 10px;
 }
 ul#slideshow li {
-	font-family:Arial, Helvetica, sans-serif;
 	width:712px;
 	height:334px;
 	display:block;
 	position:relative;
 }
-ul#slideshow li h3 {
+ul#slideshow li h3{
 	position:absolute;
-	bottom:14px;
-	left:8px;
+	bottom:0px;
+	left:0px;
 	color:#fff;
 	font-size:1.2em;
 	font-weight:100;
+	color:#fff;
+	text-decoration:none;
+	width:705px;
+	padding: 4px;
 }
-ul#slideshow li h4 a {
-	display:block;
-	background:url(testimages/search_btn.gif) no-repeat center center;
-	width:180px;
-	height:36px;
-	position:absolute;
-	right:8px;
-	bottom: 5px;
-}
-.backbtn span, .nextbtn span, ul#slideshow li h4 a span {
+.backbtn span, .nextbtn span{
 	position:absolute;
 	left:-10000px;
 }
@@ -107,6 +107,7 @@ color: #222;
 text-shadow: 0px 2px 3px #555;
 }
 small a{ text-align:center; margin:10px auto; color:#fff; text-decoration:none; font-family:arial; }
+
 
 /* Buttons  ala CSS3 */
 .button {
@@ -152,43 +153,53 @@ padding:8px 19px 9px
 .center { margin:5 auto; }
 -->
 </style>
+<!--[if IE 6]>
+<style type="text/css">
+    .transparentbg {
+        background:#fff none;
+        filter:alpha(opacity=65);
+       	height:1%;
+    }
+    
+    .transparentbg * {
+        filter:alpha(opacity=100);
+        position:relative;
+    }
+</style>
+<![endif]-->
 </head>
 <body>
 <div id="wrapper">
   <h1>fuFade</h1>
   <ul id="slideshow">
     <li> <a href="#1"><img src="testimages/img1.jpg" width="712" height="334" /></a>
-      <h3>Image 1</h3>
-      <h4><a href="#1"><span>Image 1 Description</span></a></h4>
+      <h3 class="transparentbg">Image 1</h3>
       <a href="#prev" class="backbtn"><span>prev</span></a> <a href="#next" class="nextbtn"><span>next</span></a>
-		</li>
+	</li>
     <li class="dnone"> <a href="#2"><img src="testimages/img2.jpg" width="713" height="334" /></a>
-      <h3>Image 2</h3>
-      <h4><a href="#2"><span>Image 1 Description</span></a></h4>
+      <h3 class="transparentbg">Image 2</h3>
       <a href="#prev" class="backbtn"><span>prev</span></a> <a href="#next" class="nextbtn"><span>next</span></a> 
     </li>
     <li class="dnone"> <a href="#3"><img src="testimages/img3.jpg" width="712" height="334" /></a>
-      <h3>Image 3</h3>
-      <h4><a href="#3"><span>Image 3 Description</span></a></h4>
+      <h3 class="transparentbg">Image 3</h3>
       <a href="#prev" class="backbtn"><span>prev</span></a> <a href="#next" class="nextbtn"><span>next</span></a>
-		</li>
+	</li>
     <li class="dnone"> <a href="#4"><img src="testimages/img4.jpg" width="712" height="334" /></a>
-      <h3>Image 4</h3>
-      <h4><a href="#4"><span>Image 4 Description</span></a></h4>
+      <h3 class="transparentbg">Image 4</h3>
       <a href="#prev" class="backbtn"><span>prev</span></a> <a href="#next" class="nextbtn"><span>next</span></a>
-		</li>
+	</li>
     <li class="dnone"> <a href="#5"><img src="testimages/img5.jpg" width="712" height="334" /></a>
-      <h3>Image 5</h3>
-      <h4><a href="#5"><span>Image 5 Description</span></a></h4>
+      <h3 class="transparentbg">Image 5</h3>
       <a href="#prev" class="backbtn"><span>prev</span></a> <a href="#next" class="nextbtn"><span>next</span></a>
-		</li>
+	</li>
   </ul>
 <!-- END OF SLIDESHOW -->
 <br />
 <a href="http://github.com/ChrisMcKee/fuFade" class="large orange button center">Download fuFade</a>
-<a href="example2.html" class="large blue button center">Back to second example</a>
+<a href="index.html" class="large blue button center">Back to first example</a>
 <br />
 <small><a href="http://chrismckee.co.uk/">&copy; Chris McKee &lt;chrismckee.co.uk&gt;</a></small>
 </div>
+
 </body>
 </html>

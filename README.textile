@@ -1,4 +1,4 @@
-h1. fuFade 1.0 - jQuery plugin
+h1. fuFade 1.1 - jQuery slideshow plugin
 
 
 h2. Info
@@ -62,6 +62,8 @@ h2. Options
 
 h2. Changelog
 
+* Modified release
+	JSLint ran on code; jQuery lint tested.
 * First Release 1.0
 
 h4. Based on...
